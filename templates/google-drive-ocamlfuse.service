@@ -1,0 +1,14 @@
+[Unit]
+Description=FUSE filesystem over Google Drive
+After=network.target
+
+[Service]
+User=USERNAME
+Group=USERNAME
+ExecStart=google-drive-ocamlfuse DRIVE_DIR
+ExecStop=fusermount -u DRIVE_DIR
+Restart=always
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

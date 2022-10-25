@@ -1,0 +1,15 @@
+[Unit]
+Description=Sync local keepass database from GoogleDrive
+After=google-drive-ocamlfuse.service
+
+[Service]
+User=USERNAME
+Group=USERNAME
+ExecStart=DB_DIR/sync_file.py DB_FILE
+ExecStop=pkill -f DB_DIR/sync_file.py
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+

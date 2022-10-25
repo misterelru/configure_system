@@ -1,0 +1,2 @@
+alias updallapt='sudo apt update && sudo apt full-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
+alias tshl='tsh login --ttl=3600 --proxy=teleport.cxense.com:443 --user=USERNAME --login=USERNAME'

@@ -1,0 +1,5 @@
+alias updallapt='sudo apt update && sudo apt full-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
+alias winbox='wine /bin/winbox'
+alias tshl='tsh login --ttl=3600 --proxy=teleport.cxense.com:443 --user=USERNAME --login=USERNAME'
+alias vagrantre='vagrant destroy -f && vagrant up'
+alias jumpuserssh='ssh -F ~/.ssh/jumpuser_config'
