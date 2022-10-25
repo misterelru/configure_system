@@ -17,6 +17,9 @@ PATH_TO_THIS_SCRIPT=$(dirname "$0")
 PATH_TO_TEMPLATES="${PATH_TO_THIS_SCRIPT}"/../templates
 TMP_DIR="${PATH_TO_THIS_SCRIPT}"/../tmp
 
+# Make tmp dir
+mkdir "${PATH_TO_THIS_SCRIPT}"/../tmp >> /dev/null
+
 # Question for the user
 QuestionForTheUser() {
 
