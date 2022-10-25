@@ -1,6 +1,6 @@
 # configure_system
 
-This script is for setting up your system after installation.
+This script is for setting up your system ( Ubuntu 20.04 ) after installation.
 You can run it with options.
 If you want a full setup system for A.Osipov run this with the -f option.
 If you want a simple setup for other users run this with the -s option.
