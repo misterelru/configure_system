@@ -17,16 +17,13 @@ PATH_TO_THIS_SCRIPT=$(dirname "$0")
 PATH_TO_TEMPLATES="${PATH_TO_THIS_SCRIPT}"/../templates
 TMP_DIR="${PATH_TO_THIS_SCRIPT}"/../tmp
 
-# Make tmp dir
-mkdir "${PATH_TO_THIS_SCRIPT}"/../tmp >> /dev/null
-
 # Question for the user
 QuestionForTheUser() {
 
     echo -n "$1"
     read -r user_response
     case ${user_response} in
-        y|Y|yes|Yes ) 
+        y|Y|yes|Yes )
             ${2-};;
         n|N|no|No )
             echo "Passed!";;
@@ -260,6 +257,12 @@ FullInstallWithConfigs() {
     || { echo 'error in function, line 239' | exit 0; }
 
 }
+
+# Make tmp dir
+if ! test -d "${PATH_TO_THIS_SCRIPT}"/../tmp;
+then
+    mkdir "${PATH_TO_THIS_SCRIPT}"/../tmp;
+fi
 
 # Check installation options and run the desired script
 while getopts "hfs" OPTION; do
