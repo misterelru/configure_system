@@ -32,7 +32,7 @@ xargs -a "${PATH_TO_THIS_SCRIPT}"/../files/packages_list \
 sudo apt-get install -y
 
 # Install Chrome
-if ! dpkg -l | grep chrome > /dev/null;
+if ! dpkg -l | grep google-chrome > /dev/null;
 then
     wget \
     https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O \
