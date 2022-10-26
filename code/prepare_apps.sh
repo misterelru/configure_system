@@ -46,7 +46,7 @@ if ! dpkg -l | grep -i virtualbox >> /dev/null \
 || ! dpkg -l | grep -i vagrant >> /dev/null;
 then
     sudo apt-get install -y virtualbox vagrant
-    vagrant autocomplete install --bash > /dev/null
+    nohup vagrant autocomplete install --bash > /dev/null & sleep 10
     sudo usermod -aG vboxusers "${CURRENT_USER}";
 fi
 

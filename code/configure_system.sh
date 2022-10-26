@@ -130,7 +130,7 @@ SyncDatabaseFromGoogleDrive() {
     then
         sudo add-apt-repository ppa:alessandro-strada/ppa -y
         sudo apt-get update && sudo apt-get install google-drive-ocamlfuse -y
-        google-drive-ocamlfuse
+        nohup google-drive-ocamlfuse & sleep 300
         mkdir "${HOMEDIR}"/my-google-drive
         google-drive-ocamlfuse "${HOMEDIR}"/my-google-drive;
     fi
