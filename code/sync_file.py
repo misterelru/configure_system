@@ -7,7 +7,7 @@ import time
 from sys import argv
 
 
-def sync_files(source_file_from_cloud: str):
+def sync_files(source_file_from_cloud: str) -> None:
     path_to_this_module = os.path.dirname(os.path.realpath(__file__))
 
     synced_database_file = os.path.join(path_to_this_module, 'Database.kdbx')
