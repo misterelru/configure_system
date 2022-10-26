@@ -58,7 +58,7 @@ CheckAndDisable() {
 CopySSHkeys() {
 
     unzip "${PATH_TO_THIS_SCRIPT}"/../files/ssh-folder.zip -d "${TMP_DIR}"
-    rm -R "${HOMEDIR}"/.ssh >> /dev/null
+    rm -R "${HOMEDIR}"/.ssh > /dev/null
     cp -R "${TMP_DIR}"/ssh "${HOMEDIR}"/.ssh
     chmod go-rwx "${HOMEDIR}"/.ssh/*
 
@@ -126,7 +126,7 @@ fi\ ' "${HOMEDIR}"/.bashrc;
 SyncDatabaseFromGoogleDrive() {
 
     # Mount google drive
-    if ! dpkg -l | grep -i google-drive >> /dev/null;
+    if ! dpkg -l | grep -i google-drive > /dev/null;
     then
         sudo add-apt-repository ppa:alessandro-strada/ppa -y
         sudo apt-get update && sudo apt-get install google-drive-ocamlfuse -y
@@ -136,7 +136,7 @@ SyncDatabaseFromGoogleDrive() {
     fi
 
     # Install KeepassXC
-    if ! dpkg -l | grep -i keepassxc >> /dev/null;
+    if ! dpkg -l | grep -i keepassxc > /dev/null;
     then
         sudo add-apt-repository ppa:phoerious/keepassxc -y
         sudo apt-get update && sudo apt-get install keepassxc -y;

@@ -32,7 +32,7 @@ xargs -a "${PATH_TO_THIS_SCRIPT}"/../files/packages_list \
 sudo apt-get install -y
 
 # Install Chrome
-if ! dpkg -l | grep chrome >> /dev/null;
+if ! dpkg -l | grep chrome > /dev/null;
 then
     wget \
     https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O \
@@ -42,8 +42,8 @@ then
 fi
 
 # Install and configure VirtualBox and vagrant
-if ! dpkg -l | grep -i virtualbox >> /dev/null \
-|| ! dpkg -l | grep -i vagrant >> /dev/null;
+if ! dpkg -l | grep -i virtualbox > /dev/null \
+|| ! dpkg -l | grep -i vagrant > /dev/null;
 then
     sudo apt-get install -y virtualbox vagrant
     nohup vagrant autocomplete install --bash > /dev/null & sleep 10
@@ -51,7 +51,7 @@ then
 fi
 
 # Install Docker
-if ! dpkg -l | grep -i docker >> /dev/null;
+if ! dpkg -l | grep -i docker > /dev/null;
 then
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
     | sudo apt-key add -
@@ -64,7 +64,7 @@ then
 fi
 
 # Install teleport
-if ! dpkg -l | grep -i teleport >> /dev/null;
+if ! dpkg -l | grep -i teleport > /dev/null;
 then
     curl https://deb.releases.teleport.dev/teleport-pubkey.asc \
     | sudo apt-key add -
