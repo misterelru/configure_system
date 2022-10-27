@@ -50,7 +50,7 @@ CheckAndDisable() {
     QuestionForTheUser \
     "Do you want to disable swap? (y/n) " \
     CheckAndDisable \
-    || { echo 'error in function, line 38' | exit 0; }
+    || { echo 'error in function, line 50' | exit 0; }
 
 }
 
@@ -202,7 +202,7 @@ StandartInstall() {
     QuestionForTheUser \
     "Do you want to enable auto running ssh-agent? (y/n) " \
     SSHAgent \
-    || { echo 'error in function, line 187' | exit 0; }
+    || { echo 'error in function, line 202' | exit 0; }
 
 }
 
@@ -213,13 +213,13 @@ FullInstallWithConfigs() {
     QuestionForTheUser \
     "Do you want to install vanilla gnome? (y/n) " \
     "sudo apt-get install gnome-session -y"\
-    || { echo 'error in function, line 198' | exit 0; }
+    || { echo 'error in function, line 213' | exit 0; }
 
     # Question to the user about network tools
     QuestionForTheUser \
     "Do you want to install wireshark and winbox? (y/n) " \
     InstallNetworkTools \
-    || { echo 'error in function, line 204' | exit 0; }
+    || { echo 'error in function, line 219' | exit 0; }
 
     # Question to the user about git config
     echo -en "Configure git for A.Osipov? \n
@@ -248,13 +248,13 @@ FullInstallWithConfigs() {
     QuestionForTheUser \
     "Do you want to copy SSH keys? (y/n) " \
     CopySSHkeys \
-    || { echo 'error in function, line 233' | exit 0; }
+    || { echo 'error in function, line 248' | exit 0; }
 
     # Question to the user about keepassdb
     QuestionForTheUser \
     "Mount GoogleDrive and copy keepass db? (y/n) " \
     SyncDatabaseFromGoogleDrive \
-    || { echo 'error in function, line 239' | exit 0; }
+    || { echo 'error in function, line 254' | exit 0; }
 
 }
 
