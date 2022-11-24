@@ -16,6 +16,14 @@ HOMEDIR=$( getent passwd "${CURRENT_USER}" | cut -d: -f6 )
 PATH_TO_THIS_SCRIPT=$(dirname "$0")
 PATH_TO_TEMPLATES="${PATH_TO_THIS_SCRIPT}"/../templates
 TMP_DIR="${PATH_TO_THIS_SCRIPT}"/../tmp
+RELEASE="$( lsb_release -cs )"
+
+# Checking OS release
+if [ "$RELEASE" != "focal" ];
+then
+    echo "Unsupported OS release"
+    exit 0;
+fi
 
 # Question for the user
 QuestionForTheUser() {
