@@ -16,5 +16,5 @@ jobs:
         run: pip3 install pylint
       
       - name: check-code-by-pylint 
-        run: ls -alr /github/home/
+        run: ls -alr /home/
         
