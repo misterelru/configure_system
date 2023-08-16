@@ -15,9 +15,6 @@ jobs:
       - name: install-pylint
         run: pip3 install pylint
 
-      - name: pwd
-        run: pwd
-        
       - name: clone-repo
         uses: actions/checkout@v1
               
