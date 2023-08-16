@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+'''Module for sync local DB with GDrive'''
+
 import os
 import shutil
 import time
