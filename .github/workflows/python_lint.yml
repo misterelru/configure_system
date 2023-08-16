@@ -12,9 +12,12 @@ jobs:
       image: python:3.8
 
     steps:
+      - name: ls
+        run: ls -al
+        
       - name: install-pylint
         run: pip3 install pylint
       
       - name: check-code-by-pylint 
-        run: ls -alr /*
+        run: ls -al /*
         
