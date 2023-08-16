@@ -1,7 +1,7 @@
 # Official language image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/python/tags/
 
-name: python_lint.
+name: python-lint.
 
 on: [ push ]
 
@@ -12,5 +12,5 @@ jobs:
       image: python:3.8
 
     steps:
-      - name: do_echo
-        run: echo "Fine"
+      - name: check-code-by-pylint
+        run: pylint ./code/*.py
