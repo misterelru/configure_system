@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: install-python-3.8
-        run: apt-get install python3.8
+        run: sudo apt-get install python3.8 -y
