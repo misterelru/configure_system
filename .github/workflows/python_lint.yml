@@ -16,5 +16,5 @@ jobs:
         run: pip3 install pylint
       
       - name: check-code-by-pylint 
-        run: pylint ./code/*.py
+        run: pylint /code/*.py
         
