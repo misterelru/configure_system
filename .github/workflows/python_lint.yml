@@ -12,5 +12,9 @@ jobs:
       image: python:3.8
 
     steps:
+      - name: install-pylint
+        run: pip install pylint
+      
       - name: check-code-by-pylint
         run: pylint ./code/*.py
+        
