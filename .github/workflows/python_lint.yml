@@ -7,8 +7,10 @@ on: [ push ]
 
 jobs: 
   pylint_checking:
-    runs-on: ubuntu:focal
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.8
 
     steps:
-      - name: install-python-3.8
-        run: sudo apt-get update; sudo apt-get install python3.8 -y
+      - name: do_echo
+        run: echo "Fine"
