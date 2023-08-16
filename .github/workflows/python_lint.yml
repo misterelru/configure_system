@@ -7,8 +7,8 @@ on: [ push ]
 
 jobs: 
   pylint_checking:
-    runs-on: "python:3.8"
+    runs-on: ubuntu-latest
 
     steps:
-      - name: run_pylint
-        run: pylint ./code/*.py
+      - name: install-python-3.8
+        run: apt-get install python3.8
