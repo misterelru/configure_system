@@ -7,7 +7,7 @@ on: [ push ]
 
 jobs: 
   pylint_checking:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-focal
 
     steps:
       - name: install-python-3.8
