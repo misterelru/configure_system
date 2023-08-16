@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: install-pylint
-        run: sudo pip install pylint
+        run: pip3 install pylint
       
       - name: check-code-by-pylint
         run: pylint ./code/*.py
