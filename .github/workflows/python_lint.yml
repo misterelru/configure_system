@@ -12,6 +12,10 @@ jobs:
       image: python:3.8
 
     steps:
+
+      - name: clone-repo
+        run: actions@checkout@v1
+        
       - name: ls
         run: ls -al
         
