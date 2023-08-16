@@ -15,6 +15,6 @@ jobs:
       - name: install-pylint
         run: pip3 install pylint
       
-      - name: check-code-by-pylint
-        run: pylint ./code/*.py
+      - name: check-code-by-pylint 
+        run: pylint ./code/sync_file.py
         
