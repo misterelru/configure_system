@@ -3,8 +3,7 @@
 
 name: python_lint.
 
-on: 
-  push:
+on: [ push ]
 
 jobs: 
   pylint_checking:
