@@ -5,11 +5,12 @@
 import os
 import shutil
 import time
+import sys
 
 from sys import argv
 
-
 def sync_files(source_file_from_cloud: str) -> None:
+    '''Compare local DB file with DB file fom GoogleDrive'''
     path_to_this_module = os.path.dirname(os.path.realpath(__file__))
 
     synced_database_file = os.path.join(path_to_this_module, 'Database.kdbx')
@@ -20,9 +21,9 @@ def sync_files(source_file_from_cloud: str) -> None:
         if size_source_file != size_synced_file:
             shutil.copy(source_file_from_cloud, synced_database_file)
     else:
-        exit(2)
+        sys.exit(2)
 
 while True:
-    source_file_from_cloud=argv[1]
-    sync_files(source_file_from_cloud)
+    SOURCE_FILE_FROM_CLOUD = argv[1]
+    sync_files(SOURCE_FILE_FROM_CLOUD)
     time.sleep(3600)
