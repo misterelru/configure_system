@@ -6,6 +6,7 @@ import os
 import shutil
 import time
 import sys
+from datetime import datetime, timezone
 
 def sync_files(source_file_from_cloud: str) -> None:
     '''Compare local DB file with DB file fom GoogleDrive,
@@ -20,7 +21,10 @@ def sync_files(source_file_from_cloud: str) -> None:
         size_source_file = os.stat(source_file_from_cloud).st_size
         if size_source_file != size_synced_file:
             shutil.copy(source_file_from_cloud, synced_database_file)
-            print("File has been sync:", synced_database_file)
+            current_utc_time = \
+                datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
+            print \
+                (f"File has been synced at {current_utc_time}: {synced_database_file}")
             sys.stdout.flush()
     else:
         sys.exit(2)
