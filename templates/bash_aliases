@@ -1,5 +1,8 @@
 alias updallapt='sudo apt update && sudo apt full-upgrade -y && sudo apt autoclean && sudo apt autoremove -y'
-alias winbox='wine /bin/winbox'
-alias tshl='tsh login --ttl=3600 --proxy=teleport.cxense.com:443 --user=USERNAME --login=USERNAME'
-alias vagrantre='vagrant destroy -f && vagrant up'
+alias winbox='wine /bin/winbox64'
+alias tshl='tsh login --ttl=3600 --proxy=teleport.cxense.com:443 --user=$USERNAME --login=$USERNAME'
+alias vagrantreinstall='vagrant destroy -f && vagrant up'
 alias jumpuserssh='ssh -F ~/.ssh/jumpuser_config'
+alias nodebotssh='ssh -F ~/.ssh/nodebot_config'
+alias pingg='until ping -c 5 "8.8.8.8"; do echo -e "\nNo connect\n"; sleep 5; done'
+
